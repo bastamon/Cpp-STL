@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1514559694 source:d:\administrator\documents\workspace\stl\ex3_1\main.cpp
+	<iostream>
+	<algorithm>
+	<vector>
+
