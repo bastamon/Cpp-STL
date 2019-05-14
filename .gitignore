@@ -1,6 +1,6 @@
 obj
 bin
-*.bat
+/ProjectClean v1.0.bat
 *.layout
 *.cbp
 *.depend
