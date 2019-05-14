@@ -1,7 +1,7 @@
 #include <iostream>
-
+//æŠŠä¸Šä¾‹ä¸­çš„åŒç›®è¿ç®—ç¬¦+ä»åœ¨ä¸ºå¤æ•°ç±»çš„æˆå‘˜å‡½æ•°
 using namespace std;
-//¸´ÊıÀà
+//å¤æ•°ç±»
 class complex
 {
 private:
@@ -13,14 +13,14 @@ public:
         m_imag=i;
     }
     void display_Clx();
-    //ÔËËã·û+ÖØÔØÉùÃ÷£¬ĞÎ²ÎÖ»ÓĞÒ»¸ö
+    //è¿ç®—ç¬¦+é‡è½½å£°æ˜ï¼Œå½¢å‚åªæœ‰ä¸€ä¸ª
     complex operator+(complex c2);
 };
 
 complex complex::operator+(complex c2)
 {
     complex c;
-    //ÓÉÓÚ³ÉÔ±º¯ÊıËùÒÔ¿ÉÒÔÖ±½Ó·ÃÎÊc1µÄm_realºÍm_imag
+    //ç”±äºæˆå‘˜å‡½æ•°æ‰€ä»¥å¯ä»¥ç›´æ¥è®¿é—®c1çš„m_realå’Œm_imag
     c.m_real=m_real+c2.m_real;
     c.m_imag=m_imag+c2.m_imag;
     return c;

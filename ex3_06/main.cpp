@@ -1,10 +1,10 @@
 #include <iostream>
-
+//函数对象作为函数参数的实例程序
 using namespace std;
 class Add
 {
 public:
-    //�����()����
+    //运算符()重载
     int operator()(int a,int b)
     {
         return a+b;

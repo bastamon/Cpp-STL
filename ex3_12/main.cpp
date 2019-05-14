@@ -1,7 +1,7 @@
 #include <iostream>
-
+//ç¼–å†™ä¸€ä¸ªæ™ºèƒ½æŒ‡é’ˆç¤ºä¾‹ç¨‹åº
 using namespace std;
-//My_ptrÀàÄ£°æÉùÃ÷
+//My_ptrç±»æ¨¡ç‰ˆå£°æ˜
 template<class T> class My_ptr
 {
 private:
@@ -9,7 +9,7 @@ private:
 public:
     My_ptr(T *p):_ptr(p)
     {
-        cout<<"ÉúÊ±»ñµÃ×ÊÔ´"<<endl;
+        cout<<"ç”Ÿæ—¶è·å¾—èµ„æº"<<endl;
     }
     T& operator*()
     {
@@ -21,7 +21,7 @@ public:
     }
     ~My_ptr()
     {
-        cout<<"ËÀÇ°ÊÍ·Å×ÊÔ´"<<endl;
+        cout<<"æ­»å‰é‡Šæ”¾èµ„æº"<<endl;
         delete _ptr;
     }
 
@@ -31,8 +31,8 @@ int main()
     int a=100;
     {
         My_ptr<int>p(&a);
-        cout<<"´òÓ¡×ÊÔ´Êı¾İ"<<*p<<endl;
+        cout<<"æ‰“å°èµ„æºæ•°æ®"<<*p<<endl;
     }
-    cout << "Ö¸Õë¶ÔÏópÉúÃüÆÚÒÑ½áÊø" << endl;
+    cout << "æŒ‡é’ˆå¯¹è±¡pç”Ÿå‘½æœŸå·²ç»“æŸ" << endl;
     return 0;
 }

@@ -1,5 +1,5 @@
 #include <iostream>
-
+//两个可以修改捕获变量的lambda表达式的示例程序
 using namespace std;
 
 int main()

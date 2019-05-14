@@ -1,15 +1,19 @@
 #include <iostream>
 
+//å‘é‡vectorä»¿çœŸMyVector
+//å®¹å™¨MyVectorç±»æ¨¡æ¿
+//å¯¹ä¸Šé¢çš„ä»£ç è¿›è¡Œæ•´ç†ä»¥å½¢æˆå®Œæ•´çš„MyVectorï¼Œç„¶åç¼–å†™ä¸€ä¸ªæµ‹è¯•ç¨‹åºæµ‹è¯•å®ƒ
+
 using namespace std;
-//ÏòÁ¿MyVectorµÄÀàÄ£°å
+//å‘é‡MyVectorçš„ç±»æ¨¡æ¿
 template<typename Ty>class MyVector
 {
 public:
-    //ÄÚÇ¶ÀàĞÍ±í
+    //å†…åµŒç±»å‹è¡¨
     typedef Ty value;
     typedef Ty* viter;
 public:
-    //¹¹Ôìº¯Êı
+    //æ„é€ å‡½æ•°
     MyVector(int nLen=0)
     :m_nLen(nLen),
     m_Data(NULL),
@@ -22,12 +26,12 @@ public:
             end_of_element=nLen;
         }
     }
-    //Îö¹¹º¯Êı
+    //ææ„å‡½æ•°
     ~MyVector()
     {
         delete []m_Data;
     }
-    //Êı×éÎ²²¿ÊäÈëÊı¾İº¯Êı
+    //æ•°ç»„å°¾éƒ¨è¾“å…¥æ•°æ®å‡½æ•°
     void push_back(const value& x)
     {
         if(end_of_element!=finish)
@@ -36,17 +40,17 @@ public:
             ++finish;
         }else
         {
-            cout<<"Ô½½ç"<<endl;
+            cout<<"è¶Šç•Œ"<<endl;
         }
 
     }
-    //×ÔÊı×éÎ²²¿Êä³öÊı¾İµÄº¯Êı
+    //è‡ªæ•°ç»„å°¾éƒ¨è¾“å‡ºæ•°æ®çš„å‡½æ•°
     inline value pop_back()
     {
         --finish;
         return *(star+finish);
     }
-    //ÖØÔØoperator[]
+    //é‡è½½operator[]
     value& operator[](int n)
     {
         if (n==finish||n<finish)
@@ -65,18 +69,18 @@ protected:
 int main()
 {
     int x;
-    //¶¨ÒåintÀàĞÍmyvector¶ÔÏóv1
+    //å®šä¹‰intç±»å‹myvectorå¯¹è±¡v1
     MyVector<int>v1(10);
-    //×Ôv1Î²²¿ÊäÈëÊı¾İ100
+    //è‡ªv1å°¾éƒ¨è¾“å…¥æ•°æ®100
     v1.push_back(100);
-    //×Ôv1Î²²¿ÊäÈëÊı¾İ200
+    //è‡ªv1å°¾éƒ¨è¾“å…¥æ•°æ®200
     v1.push_back(200);
-    //×Ôv1Î²²¿ÊäÈëÊı¾İ300
+    //è‡ªv1å°¾éƒ¨è¾“å…¥æ•°æ®300
     v1.push_back(300);
-    //×Ôv1Î²²¿Êä³öÊı¾İ
+    //è‡ªv1å°¾éƒ¨è¾“å‡ºæ•°æ®
     x=v1.pop_back();
     cout << "x=" <<x<< endl;
-    //Ê¹ÓÃÏÂ±ê·½Ê½Ëæ»ú·ÃÎÊÏòÁ¿ÖĞÊı¾İ
+    //ä½¿ç”¨ä¸‹æ ‡æ–¹å¼éšæœºè®¿é—®å‘é‡ä¸­æ•°æ®
     cout<<v1[0]<<endl;
     cout<<v1[1]<<endl;
     cout<<v1[2]<<endl;

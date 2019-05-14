@@ -3,7 +3,7 @@
 #include <vector>
 
 using namespace std;
-
+//试写一个数组，里面存放10个随机产生的整型数，然后把其中数据进行从小到大和从大到小的排序
 int main()
 {
     vector<int>intVector;//定义向量容器

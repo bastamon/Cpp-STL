@@ -1,15 +1,15 @@
 #include <iostream>
-
+//å¤šç§lambdaè¡¨è¾¾å¼è°ƒç”¨å®ä¾‹ç¨‹åº
 using namespace std;
 
 int main()
 {
-    //lambda±í´ïÊ½ÉùÃ÷¶¨Òå¼°µ÷ÓÃ
+    //lambdaè¡¨è¾¾å¼å£°æ˜å®šä¹‰åŠè°ƒç”¨
     [](int x){cout<<2*x<<endl;}(10);
-    //ÏÈ¶¨Òå¶ÔÏóÔÙµ÷ÓÃ
+    //å…ˆå®šä¹‰å¯¹è±¡å†è°ƒç”¨
     auto f=[](int x){cout<<2*x<<endl;};
     f(10);
-    //ÓĞ·µ»ØÖµµÄlambdaµ÷ÓÃ
+    //æœ‰è¿”å›å€¼çš„lambdaè°ƒç”¨
     int a=[](int x)->int {return 2*x;}(10);
     cout <<a<< endl;
     return 0;

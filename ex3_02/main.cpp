@@ -1,15 +1,14 @@
 #include <iostream>
-//¶¨ÒåÒ»¸ö¸´ÊıÀà£¬²¢ÒÑÓÑÔªº¯Êı·½Ê½ÎªÆäÖØÔØÒ»¸öÈ«¾Ö¼Ù·¢ÔËËã·û£¬
-//Ê¹Ëû¿ÉÒÔÊµÏÖ¸´ÊıµÄ¼Ó·¨ÔËËã
+//å®šä¹‰ä¸€ä¸ªå¤æ•°ç±»ï¼Œå¹¶å·²å‹å…ƒå‡½æ•°æ–¹å¼ä¸ºå…¶é‡è½½ä¸€ä¸ªå…¨å±€å‡å‘è¿ç®—ç¬¦ï¼Œä½¿ä»–å¯ä»¥å®ç°å¤æ•°çš„åŠ æ³•è¿ç®—
 
 using namespace std;
-//¸´ÊıÀà
+//å¤æ•°ç±»
 class complex
 {
     private:
         double real,imag;
     public:
-        //ÓÑÔªÉùÃ÷
+        //å‹å…ƒå£°æ˜
         friend complex& operator+(const complex& c1,const complex& c2);
         complex(double r=0,double i=0)
         {
@@ -28,7 +27,7 @@ void complex::display_Clx()
 
 }
 
-//ÖØÔØµÄ¼Ó·¨ÔËËã·û
+//é‡è½½çš„åŠ æ³•è¿ç®—ç¬¦
 complex& operator+(const complex& c1,const complex&c2)
 {
     complex c;

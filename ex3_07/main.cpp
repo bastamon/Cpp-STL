@@ -1,5 +1,5 @@
 #include <iostream>
-
+//lambdaè¡¨è¾¾å¼ä¸å…·æœ‰ç›¸åŒåŠŸèƒ½çš„ä»¿å‡½æ•°çš„æ¯”è¾ƒ
 using namespace std;
 class functor
 {
@@ -12,9 +12,9 @@ public:
 };
 int main()
 {
-    //·Âº¯Êı¶¨Òå¼°µ÷ÓÃ
+    //ä»¿å‡½æ•°å®šä¹‰åŠè°ƒç”¨
     functor f;f(10);
-    //lambda±í´ïÊ½ÉùÃ÷¶¨Òå¼°µ÷ÓÃ
+    //lambdaè¡¨è¾¾å¼å£°æ˜å®šä¹‰åŠè°ƒç”¨
     [](int x){cout<<2*x<<endl;}(10);
     cout << "Hello world!" << endl;
     return 0;
