@@ -6,17 +6,17 @@ using namespace std;
 
 int main()
 {
-    vector<int>intVector;//定义向量容器
-    vector<int>::iterator iter;//定义容器的迭代器
-    //在如下循环中，使用vector成员函数push_back
-    //向容器中输入10个随机数
+    vector<int>intVector;//瀹氫箟鍚戦噺瀹瑰櫒
+    vector<int>::iterator iter;//瀹氫箟瀹瑰櫒鐨勮凯浠ｅ櫒
+    //鍦ㄥ涓嬪惊鐜腑锛屼娇鐢╲ector鎴愬憳鍑芥暟push_back
+    //鍚戝鍣ㄤ腑杈撳叆10涓殢鏈烘暟
     for(int i=0;i<10;i++)
         intVector.push_back((int)rand());
-    //显示容器中的数据
+    //鏄剧ず瀹瑰櫒涓殑鏁版嵁
     for(iter=intVector.begin();iter!=intVector.end();iter++)
         cout<<*iter<<"\t";
     cout<<endl;
-    //排序
+    //鎺掑簭
     sort(intVector.begin(),intVector.end(),greater<int>());
     for(iter=intVector.begin();iter!=intVector.end();iter++)
         cout<<*iter<<"\t";
