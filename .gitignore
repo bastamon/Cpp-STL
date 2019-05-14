@@ -1,1 +1,9 @@
 /ProjectClean v1.0.bat
+
+
+/.git
+
+*.obj
+
+*.bin
+*
