@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-
+//把lambda表达式应用于STL通用算法的一个程序示例
 using namespace std;
 
 int main()

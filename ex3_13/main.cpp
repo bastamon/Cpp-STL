@@ -1,8 +1,8 @@
 #include <iostream>
-
+//æŠŠä¸Šé¢ä¸¤æ®µä»£ç è¿èµ·æ¥ç¼–å†™ä¸€ä¸ªæ¼”ç¤ºç¨‹åº
 using namespace std;
 template<typename T>class SharePtr;
-//¶¨Òå¼ÆÊıÀàÄ£°å
+//å®šä¹‰è®¡æ•°ç±»æ¨¡æ¿
 template<typename T> class Res_Ptr
 {
 private:
@@ -10,37 +10,37 @@ private:
     int use_num;
     Res_Ptr(T *p):res_p(p),use_num(1)
     {
-        cout<<"Res_Ptr¹¹Ôìº¯Êı"<<endl;
+        cout<<"Res_Ptræ„é€ å‡½æ•°"<<endl;
 
     }
     ~Res_Ptr()
     {
         delete res_p;
-        cout<<"Res_PtrÎö¹¹º¯Êı"<<endl;
+        cout<<"Res_Ptrææ„å‡½æ•°"<<endl;
     }
     friend class SharePtr<T>;
 
 };
-//shareptrÄ£°æÉùÃ÷
+//shareptræ¨¡ç‰ˆå£°æ˜
 template<typename T>class SharePtr
 {
 public:
-    //¹¹Ôìº¯Êı
+    //æ„é€ å‡½æ•°
     SharePtr(T *p,T i):ptr(new Res_Ptr<T>(p)),val(i)
     {
-        count<<"SharePtr¹¹Ôìº¯Êı"<<"use_num"<<ptr->use_num<<endl;
+        count<<"SharePtræ„é€ å‡½æ•°"<<"use_num"<<ptr->use_num<<endl;
     }
-    //¸´ÖÆ¹¹Ôìº¯Êı
+    //å¤åˆ¶æ„é€ å‡½æ•°
     SharePtr(const SharePtr &orig):ptr(orig.ptr),val(orig.val)
     {
         ++ptr->use_num;
-        cout<<"SharePtr¸´ÖÆ¹¹Ôìº¯Êı"<<"use_num="<<ptr->use<<endl;
+        cout<<"SharePtrå¤åˆ¶æ„é€ å‡½æ•°"<<"use_num="<<ptr->use<<endl;
     }
-    //Îö¹¹º¯Êı¡£Èç¹û¼¼ÊõÎª0£¬ÔòÉ¾³ıRes_Ptr¶ÔÏó
+    //ææ„å‡½æ•°ã€‚å¦‚æœæŠ€æœ¯ä¸º0ï¼Œåˆ™åˆ é™¤Res_Ptrå¯¹è±¡
     ~SharePtr()
     {
 
-        cout<<"SharePtrÎö¹¹º¯Êı"<<"use_num="<<ptr->use_num<<endl;
+        cout<<"SharePtrææ„å‡½æ•°"<<"use_num="<<ptr->use_num<<endl;
         if(--ptr->use_num==0)
             delete ptr;
     }
@@ -54,13 +54,13 @@ int main()
     {
         SharePtr<int>hpa=SharePtr<int>(new int(42),100);
         {
-            SharePtr<int>hpb(hpa);//¸´ÖÆ¹¹ÔìÒ»¸öÖ¸Õë¶ÔÏó
-            SharePtr<int>hpc(hpb);//¸´ÖÆ¹¹ÔìÒ»¸öÖ¸Õë¶ÔÏó
-            SharePtr<int>hpd=hpa;//¸´ÖÆ¹¹ÔìÒ»¸öÖ¸Õë¶ÔÏó
+            SharePtr<int>hpb(hpa);//å¤åˆ¶æ„é€ ä¸€ä¸ªæŒ‡é’ˆå¯¹è±¡
+            SharePtr<int>hpc(hpb);//å¤åˆ¶æ„é€ ä¸€ä¸ªæŒ‡é’ˆå¯¹è±¡
+            SharePtr<int>hpd=hpa;//å¤åˆ¶æ„é€ ä¸€ä¸ªæŒ‡é’ˆå¯¹è±¡
         };
-        cout<<"ÄÚ²ãÀ¨ºÅ½áÊø"<<endl;
+        cout<<"å†…å±‚æ‹¬å·ç»“æŸ"<<endl;
     }
 
-    cout << "ÖĞ²ãÀ¨ºÅ½áÊø" << endl;
+    cout << "ä¸­å±‚æ‹¬å·ç»“æŸ" << endl;
     return 0;
 }
